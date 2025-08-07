@@ -1,0 +1,445 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gray: #1a1a2e;
+            --secondary-gray: #16213e;
+            --purple: #6366f1;
+            --cyan: #22d3ee;
+            --light-gray: #64748b;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--primary-gray);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-card {
+            background: var(--glass);
+            backdrop-filter: blur(40px);
+            border-radius: 32px;
+            border: 1px solid var(--glass-border);
+            padding: 60px;
+            text-align: center;
+            box-shadow: 
+                0 32px 64px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: elegantFadeIn 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
+        }
+
+        @keyframes elegantFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-image {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple), var(--cyan));
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow: hidden;  /* Add this to ensure image stays within bounds */
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* Makes image cover the area */
+            object-position: center top;  /* Positions image to show head portion */
+            transition: transform 0.4s ease;  /* Smooth transform animation */
+        }
+
+        .profile-image:hover img {
+            transform: scale(1.1);  /* Slight zoom on hover */
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--cyan), var(--purple), var(--cyan));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .profile-image:hover::before {
+            opacity: 1;
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--white) 0%, var(--cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: elegantSlideUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.6s forwards;
+        }
+
+        .title {
+            font-size: 1.25rem;
+            color: var(--light-gray);
+            margin-bottom: 40px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: elegantSlideUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.8s forwards;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: elegantSlideUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 1s forwards;
+        }
+
+        @keyframes elegantSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 12px 24px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            backdrop-filter: blur(20px);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: skillFadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        .skill-tag:nth-child(1) { animation-delay: 1.2s; }
+        .skill-tag:nth-child(2) { animation-delay: 1.3s; }
+        .skill-tag:nth-child(3) { animation-delay: 1.4s; }
+        .skill-tag:nth-child(4) { animation-delay: 1.5s; }
+        .skill-tag:nth-child(5) { animation-delay: 1.6s; }
+        .skill-tag:nth-child(6) { animation-delay: 1.7s; }
+        .skill-tag:nth-child(7) { animation-delay: 1.8s; }
+        .skill-tag:nth-child(8) { animation-delay: 1.9s; }
+
+        @keyframes skillFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            background: rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.3);
+            color: var(--white);
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.2);
+        }
+
+        .sawer-section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: elegantSlideUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
+        }
+
+        .sawer-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--purple), var(--cyan));
+            color: var(--white);
+            text-decoration: none;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+        }
+
+        .sawer-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .sawer-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 48px rgba(99, 102, 241, 0.4);
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+        }
+
+        .sawer-button:hover::before {
+            left: 100%;
+        }
+
+        .sawer-icon {
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: elegantSlideUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 2.2s forwards;
+        }
+
+        .social-link {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 1.4rem;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--light-gray), transparent);
+            margin: 40px auto;
+            opacity: 0;
+            animation: elegantSlideUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 1.8s forwards;
+        }
+
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple), var(--cyan));
+            opacity: 0.03;
+            animation: float 20s infinite linear;
+            pointer-events: none;
+        }
+
+        .floating-orb:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: -5%;
+            animation-delay: 0s;
+        }
+
+        .floating-orb:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 70%;
+            right: -3%;
+            animation-delay: -10s;
+        }
+
+        .floating-orb:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: -2%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 16px;
+            }
+
+            .profile-card {
+                padding: 40px 24px;
+                border-radius: 24px;
+            }
+
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .title {
+                font-size: 1.1rem;
+            }
+
+            .bio {
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            .skills {
+                gap: 8px;
+                margin-bottom: 40px;
+            }
+
+            .skill-tag {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .sawer-button {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+
+            .social-links {
+                gap: 12px;
+            }
+
+            .social-link {
+                width: 48px;
+                height: 48px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-card {
+                padding: 32px 20px;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .bio {
+                font-size: 0.95rem;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .sawer-button {
+                padding: 14px 28px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Smooth scroll for better UX */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--purple), var(--cyan));
+            border-radius: 3px;
+        }
