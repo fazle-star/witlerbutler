@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
-    "build": "node_modules/.bin/tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/output.css --minify",
     "format": "prettier --write ."
   },
   "devDependencies": {
