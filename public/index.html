@@ -6,8 +6,15 @@
     <title>Choose Your Character</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css" />
-        <!-- Favicon -->
-        <link rel="icon" href="logoimg/favicon.ico" type="image/x-icon">
+    <link rel="preload" href="css/style.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon -->
+    <link rel="icon" href="logoimg/favicon.ico" type="image/x-icon" />
 
     <style>
       /* Navbar Styles */
@@ -108,7 +115,11 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="absolute left-10 top-1/2 -translate-y-5 translate-x-[250px]">
-        <img class="w-[40px]" src="logoimg/Proyek Baru 14 [2C2B97E].png" alt="">
+        <img
+          class="w-[40px]"
+          src="logoimg/Proyek Baru 14 [2C2B97E].png"
+          alt=""
+        />
       </div>
       <div class="nav-content">
         <a href="#" class="nav-brand">WitchkerButler</a>
@@ -147,7 +158,7 @@
         class="absolute inset-0 bg-animate"
         style="
           background-image:
-            url(&quot;img/header.jpg&quot;), url(&quot;img/header.jpg&quot;);
+            url(&quot;img/header.webp&quot;), url(&quot;img/header.webp&quot;);
           background-repeat: repeat-x;
           background-position:
             0 0,
@@ -170,8 +181,9 @@
           <!-- SLIDE 0: RISOL -->
           <div class="w-screen h-full relative overflow-hidden">
             <img
-              src="risolimg/Screenshot 2025-08-04 130147.png"
+              src="risolimg/bgtmblrisol.webp"
               class="absolute inset-0 w-full h-full object-cover z-0 bg-dim"
+              loading="lazy"
             />
             <div
               class="absolute right-10 top-1/2 -translate-y-1/2 w-[820px] h-[820px] transition rounded-full z-10 opacity-50 blur-3xl animate-pulse"
@@ -179,35 +191,45 @@
             ></div>
             <div class="absolute right-0 top-1/2 -translate-y-1/2 z-20 pr-12">
               <img
-                src="risolimg/risol.png"
+                src="risolimg/risoltmbl.webp"
                 class="character-img w-[750px] max-w-[100vh] h-auto"
+                loading="lazy"
               />
             </div>
             <div
               class="absolute left-10 top-1/2 -translate-y-1/2 space-y-4 z-30 max-w-sm"
             >
-              <h1 class="text-4xl font-bold text-white fade-in" id="name-0">
-                ORIANA
-              </h1>
-              <p class="text-lg text-gray-300 fade-in" id="desc-0">
-                Sunlight’s precision, victory’s sight—One shot, one light!☀️
-                SAYA VTUBER dari Whicker Butler Gen 1: NO1R Maiden! Suka ngobrol
-                dan nyanyi~
-              </p>
-              <button
-                onclick="toggleDetail(0)"
-                class="detail-btn px-6 py-3 text-white font-semibold rounded-lg mt-4"
-              >
-                <span class="relative z-10">Learn More</span>
-              </button>
+              <div class="bg-black/30 backdrop-blur-md p-4 rounded-lg">
+                <h1
+                  class="text-4xl md:text-5xl font-bold text-white fade-in"
+                  id="name-0"
+                >
+                  ORIANA
+                </h1>
+                <p
+                  class="text-base md:text-lg text-gray-300 fade-in mt-2"
+                  id="desc-0"
+                >
+                  Sunlight’s precision, victory’s sight—One shot, one light!☀️
+                  SAYA VTUBER dari Whicker Butler Gen 1: NO1R Maiden! Suka
+                  ngobrol dan nyanyi~
+                </p>
+                <button
+                  onclick="toggleDetail(0)"
+                  class="detail-btn px-6 py-3 text-white font-semibold rounded-lg mt-4 hover:scale-105 transition-transform"
+                >
+                  <span class="relative z-10">Learn More</span>
+                </button>
+              </div>
             </div>
           </div>
 
           <!-- SLIDE 1: DARYLNE -->
           <div class="w-screen h-full relative overflow-hidden">
             <img
-              src="darlyneimg/Screenshot 2025-08-04 140036.png"
+              src="darlyneimg/bgtmbldar.webp"
               class="absolute inset-0 w-full h-full object-cover z-0 bg-dim"
+              loading="lazy"
             />
             <div
               class="absolute right-10 top-1/2 -translate-y-1/2 w-[820px] h-[820px] transition rounded-full z-10 opacity-50 blur-3xl animate-pulse"
@@ -217,35 +239,91 @@
               class="absolute right-0 top-[500px] -translate-y-1/2 z-20 pr-12"
             >
               <img
-                src="darlyneimg/talent-darlyne-DGXxQHEH.png"
+                src="darlyneimg/talent-darlyne-DGXxQHEH.webp"
                 class="character-img w-[850px] max-w-[100vh] h-auto"
+                loading="lazy"
               />
             </div>
             <div
               class="absolute left-10 top-1/2 -translate-y-1/2 space-y-4 z-30 max-w-sm"
             >
-              <h1 class="text-4xl font-bold text-white fade-in" id="name-1">
-                DARLYNE
-              </h1>
-              <p class="text-lg text-gray-300 fade-in" id="desc-1">
-                Call my name in the midnight, and my love will blooming for you.
-                Darlyne siap membantu memperbaiki kisah cintamu. Whicker Butler
-                Gen 1: NO1R Maidens
-              </p>
-              <button
-                onclick="toggleDetail(1)"
-                class="detail-btn px-6 py-3 text-white font-semibold rounded-lg mt-4"
-              >
-                <span class="relative z-10">Learn More</span>
-              </button>
+              <div class="bg-black/30 backdrop-blur-md p-4 rounded-lg">
+                <h1
+                  class="text-4xl md:text-5xl font-bold text-white fade-in"
+                  id="name-1"
+                >
+                  DARLYNE
+                </h1>
+                <p
+                  class="text-base md:text-lg text-gray-300 fade-in mt-2"
+                  id="desc-1"
+                >
+                  Call my name in the midnight, and my love will blooming for
+                  you. Darlyne siap membantu memperbaiki kisah cintamu. Whicker
+                  Butler Gen 1: NO1R Maidens
+                </p>
+                <button
+                  onclick="toggleDetail(1)"
+                  class="detail-btn px-6 py-3 text-white font-semibold rounded-lg mt-4 hover:scale-105 transition-transform"
+                >
+                  <span class="relative z-10">Learn More</span>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="profile-card slide-from-right w-full md:w-[600px] lg:w-[800px] p-4 md:p-6"
+            >
+              <div class="lore-section">
+                <h2 class="lore-title text-2xl md:text-3xl mb-4">Lore</h2>
+                <p class="lore-text text-sm md:text-base leading-relaxed mb-4">
+                  Darlyne Nightbloom adalah seorang putri di sebuah kerajaan
+                  bernama
+                  <span class="highlight">"Nocturnia"</span> yang memiliki
+                  <span class="highlight"
+                    >kekuatan magis untuk menyatukan cinta</span
+                  >, orang-orang menyebutnya
+                  <span class="highlight">"Dokter Cinta"</span>! Banyak pasien
+                  yang berkunjung dari luar maupun dari dalam kerajaan untuk
+                  <span class="highlight"
+                    >meminta bantuan Darlyne agar dipertemukan dengan
+                    cintanya</span
+                  >.
+                </p>
+                <p class="lore-text text-sm md:text-base leading-relaxed">
+                  Namun kekuatan Darlyne sering disalahgunakan untuk
+                  <span class="highlight">merebut suami/istri orang</span>
+                  bahkan
+                  <span class="highlight">membunuhnya menggunakan panah</span>
+                  yang ia baluri dengan ramuan mantra buatannya. Karena ulahnya,
+                  <span class="highlight"
+                    >Nocturnia menjadi kacau dan banyak peperangan</span
+                  >.
+                  <span class="highlight"
+                    >Raja dan Ratu mengusir Darlyne dari kerajaan</span
+                  >
+                  untuk menebus dosa-dosa yang telah ia perbuat. Darlyne
+                  merantau pergi jauh untuk
+                  <span class="highlight">mencari pekerjaan baru</span>.
+                </p>
+              </div>
+              <div class="lore-section mt-3 items-center flex justify-center">
+                <img
+                  class="w-[100%] max-w-[400px]"
+                  src="darlyneimg/darylnevector.webp"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
 
           <!-- SLIDE 2: THALITA -->
           <div class="w-screen h-full relative overflow-hidden">
             <img
-              src="thalitaimg/Screenshot 2025-08-04 140157.png"
+              src="thalitaimg/bgtmbltata.webp"
               class="absolute inset-0 w-full h-full object-cover z-0 bg-dim"
+              loading="lazy"
             />
             <div
               class="absolute right-10 top-[600px] -translate-y-1/2 w-[820px] h-[820px] transition rounded-full z-10 opacity-50 blur-3xl animate-pulse"
@@ -255,13 +333,15 @@
               class="absolute right-0 top-[500px] -translate-y-1/2 z-20 pr-12"
             >
               <img
-                src="thalitaimg/talent-thalita-BmeRbuLA.png"
+                src="thalitaimg/talent-thalita-BmeRbuLA.webp"
                 class="character-img w-[850px] max-w-[100vh] h-auto"
+                loading="lazy"
               />
             </div>
             <div
               class="absolute left-10 top-1/2 -translate-y-1/2 space-y-4 z-30 max-w-sm"
             >
+            <div class="bg-black/30 backdrop-blur-md p-4 rounded-lg">
               <h1 class="text-4xl font-bold text-white fade-in" id="name-2">
                 THALITA
               </h1>
@@ -276,13 +356,15 @@
                 <span class="relative z-10">Learn More</span>
               </button>
             </div>
+            </div>
           </div>
 
           <!-- SLIDE 3: IGNIS -->
           <div class="w-screen h-full relative overflow-hidden">
             <img
-              src="ignisimg/Screenshot 2025-08-04 140130.png"
+              src="ignisimg/bgtmblignis.webp"
               class="absolute inset-0 w-full h-full object-cover z-0 bg-dim"
+              loading="lazy"
             />
             <div
               class="absolute right-10 top-1/2 -translate-y-1/2 w-[820px] h-[820px] transition rounded-full z-10 opacity-50 blur-3xl animate-pulse"
@@ -290,13 +372,15 @@
             ></div>
             <div class="absolute right-0 top-1/2 -translate-y-1/2 z-20 pr-12">
               <img
-                src="ignisimg/talent-ignis-D1JrHAoJ.png"
+                src="ignisimg/talent-ignis-D1JrHAoJ.webp"
                 class="character-img w-[750px] max-w-[100vh] h-auto"
+                loading="lazy"
               />
             </div>
             <div
               class="absolute left-10 top-1/2 -translate-y-1/2 space-y-4 z-30 max-w-sm"
             >
+            <div class="bg-black/30 backdrop-blur-md p-4 rounded-lg">       
               <h1 class="text-4xl font-bold text-white fade-in" id="name-3">
                 IGNIS
               </h1>
@@ -312,13 +396,15 @@
                 <span class="relative z-10">Learn More</span>
               </button>
             </div>
+            </div>
           </div>
 
           <!-- SLIDE 4: VALTHEA -->
           <div class="w-screen h-full relative overflow-hidden">
             <img
-              src="valtheaimg/valbg.png"
+              src="valtheaimg/bgtmblthea.webp"
               class="absolute inset-0 w-full h-full object-cover z-0 bg-dim"
+              loading="lazy"
             />
             <div
               class="absolute right-10 top-1/2 -translate-y-1/2 w-[620px] h-[420px] rounded-full z-10 opacity-50 blur-3xl animate-pulse"
@@ -326,13 +412,15 @@
             ></div>
             <div class="absolute right-0 top-1/2 -translate-y-1/2 z-20 pr-12">
               <img
-                src="valtheaimg/talent-valthea-Cwa-vGOS.png"
+                src="valtheaimg/talent-valthea-Cwa-vGOS.webp"
                 class="character-img w-[750px] max-w-[100vh] h-auto"
+                loading="lazy"
               />
             </div>
             <div
               class="absolute left-10 top-1/2 -translate-y-1/2 space-y-4 z-30 max-w-sm"
             >
+            <div class="bg-black/30 backdrop-blur-md p-4 rounded-lg">
               <h1 class="text-4xl font-bold text-white fade-in" id="name-4">
                 VALTHEA
               </h1>
@@ -348,6 +436,7 @@
               >
                 <span class="relative z-10">Learn More</span>
               </button>
+            </div>
             </div>
           </div>
         </div>
@@ -402,101 +491,6 @@
             <div class="profile-card slide-from-left">
               <div class="character-image" onclick="changeImage()"></div>
 
-              <!-- <div
-                style="
-                  display: flex;
-                  flex-wrap: wrap;
-                  gap: 5px;
-                  margin-bottom: 15px;
-                  justify-content: center;
-                "
-              >
-                <button
-                  onclick="changeImageSize('contain')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #d4af37;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Fit
-                </button>
-                <button
-                  onclick="changeImageSize('cover')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #d4af37;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Fill
-                </button>
-                <button
-                  onclick="changeImageSize('auto')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #228b22;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Auto
-                </button>
-                <button
-                  onclick="setImagePreset('character')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #8b4513;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Character
-                </button>
-                <button
-                  onclick="setImagePreset('portrait')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #8b4513;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Portrait
-                </button>
-                <button
-                  onclick="changeImagePosition('center top')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #dc143c;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Focus Head
-                </button>
-              </div> -->
-
               <div class="mt-4 info-section">
                 <div class="info-title">Nickname</div>
                 <div class="info-content">
@@ -550,32 +544,14 @@
                   <em>underground</em> di bawah kerajaan, sekarang kerjanya
                   nyantai-nyantai <span class="highlight">(tapi boong)</span>
                 </p>
-
-                <!-- <div class="lore-image-slider" data-char="risol">
-                  <div class="slider-container">
-                    <img
-                      src="risolimg/Screenshot 2025-06-24 070757.png"
-                      class="slider-image"
-                      alt="Risol Lore 1"
-                    />
-                    <img
-                      src="risolimg/lore2.jpg"
-                      class="slider-image"
-                      alt="Risol Lore 2"
-                    />
-                    <img
-                      src="risolimg/lore3.jpg"
-                      class="slider-image"
-                      alt="Risol Lore 3"
-                    />
-                  </div>
-                  <div class="slider-nav"></div>
-                  <button class="slider-btn prev">❮</button>
-                  <button class="slider-btn next">❯</button>
-                </div> -->
               </div>
               <div class="lore-section mt-3 items-center flex justify-center">
-                <img class="w-[100%] max-w-[500px]" src="risolimg/Screenshot 2025-06-24 070757.png" alt="">
+                <img
+                  class="w-[100%] max-w-[500px]"
+                  src="risolimg/risolvector.webp"
+                  loading="lazy"
+                  alt=""
+                />
               </div>
             </div>
           </div>
@@ -584,22 +560,26 @@
             <div class="likes">
               <h3 class="section-title">❤️ Likes</h3>
               <div class="preference-item">
-                <strong class="text-amber-900">POKKA OOLONG TEA</strong> 
+                <strong class="text-amber-900">POKKA OOLONG TEA</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">CITY POP</strong> 
+                <strong class="text-amber-900">CITY POP</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Uang</strong> 
+                <strong class="text-amber-900">Uang</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Teh</strong> 
+                <strong class="text-amber-900">Teh</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Indomie goreng + dada ayam + sayuran</strong>
+                <strong class="text-amber-900"
+                  >Indomie goreng + dada ayam + sayuran</strong
+                >
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Ngobrol dan nyanyi-nyanyi</strong>
+                <strong class="text-amber-900"
+                  >Ngobrol dan nyanyi-nyanyi</strong
+                >
               </div>
               <div class="preference-item">
                 <strong class="text-amber-900">Nonton anime</strong>
@@ -609,16 +589,16 @@
             <div class="dislikes">
               <h3 class="section-title">💔 Dislikes</h3>
               <div class="preference-item">
-                <strong class="text-amber-900">Gabisa tidur</strong> 
+                <strong class="text-amber-900">Gabisa tidur</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Overthinking</strong> 
+                <strong class="text-amber-900">Overthinking</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Kerja</strong> 
+                <strong class="text-amber-900">Kerja</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Hewan berlendir</strong> 
+                <strong class="text-amber-900">Hewan berlendir</strong>
               </div>
             </div>
           </div>
@@ -644,109 +624,23 @@
           <div class="main-content border-[#e82cdb]">
             <div class="profile-card slide-from-left">
               <div class="character-image" onclick="changeImage()"></div>
-
-              <!-- <div
-                style="
-                  display: flex;
-                  flex-wrap: wrap;
-                  gap: 5px;
-                  margin-bottom: 15px;
-                  justify-content: center;
-                "
-              >
-                <button
-                  onclick="changeImageSize('contain')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #e613c9;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Fit
-                </button>
-                <button
-                  onclick="changeImageSize('cover')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #e613c9;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Fill
-                </button>
-                <button
-                  onclick="changeImageSize('auto')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #ff69ec;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Auto
-                </button>
-                <button
-                  onclick="setImagePreset('character')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #c71585;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Character
-                </button>
-                <button
-                  onclick="setImagePreset('portrait')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #c71585;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Portrait
-                </button>
-                <button
-                  onclick="changeImagePosition('center top')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #ff1493;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Focus Head
-                </button>
-              </div> -->
-
               <div class="mt-4 info-section">
-                <div class="info-title bg-gradient-to-bl from-[#f7b6f3] to-[#e82cdb] ">Nickname</div>
-                <div class="info-content border-[#e82cdb] bg-[#fce4fa]">Darlyne,Dadar</div>
+                <div
+                  class="info-title bg-gradient-to-bl from-[#f7b6f3] to-[#e82cdb]"
+                >
+                  Nickname
+                </div>
+                <div class="info-content border-[#e82cdb] bg-[#fce4fa]">
+                  Darlyne,Dadar
+                </div>
               </div>
 
               <div class="info-section">
-                <div class="info-title  bg-gradient-to-bl from-[#f7b6f3] to-[#e82cdb]">Personal Info</div>
+                <div
+                  class="info-title bg-gradient-to-bl from-[#f7b6f3] to-[#e82cdb]"
+                >
+                  Personal Info
+                </div>
                 <div class="info-content border-[#e82cdb] bg-[#fce4fa]">
                   <div class="info-row">
                     <span class="info-label">Birthday:</span>
@@ -763,14 +657,26 @@
                 </div>
               </div>
 
-              <div class="info-section ">
-                <div class="info-title bg-gradient-to-bl from-[#f7b6f3] to-[#e82cdb] ">Languages</div>
-                <div class="info-content border-[#e82cdb] bg-[#fce4fa]">ID (JAGO), EN (BROKEN), SUNDA (JAGO), JAWA (BROKEN)</div>
+              <div class="info-section">
+                <div
+                  class="info-title bg-gradient-to-bl from-[#f7b6f3] to-[#e82cdb]"
+                >
+                  Languages
+                </div>
+                <div class="info-content border-[#e82cdb] bg-[#fce4fa]">
+                  ID (JAGO), EN (BROKEN), SUNDA (JAGO), JAWA (BROKEN)
+                </div>
               </div>
 
-              <div class="info-section ">
-                <div class="info-title bg-gradient-to-bl from-[#f7b6f3] to-[#e82cdb] ">HOBBY</div>
-                <div class="info-content border-[#e82cdb] bg-[#fce4fa]">PLAYING INSTRUMEN, DANCING, SINGING, GAMING, ACTING, FBERAK</div>
+              <div class="info-section">
+                <div
+                  class="info-title bg-gradient-to-bl from-[#f7b6f3] to-[#e82cdb]"
+                >
+                  HOBBY
+                </div>
+                <div class="info-content border-[#e82cdb] bg-[#fce4fa]">
+                  PLAYING INSTRUMEN, DANCING, SINGING, GAMING, ACTING, FBERAK
+                </div>
               </div>
             </div>
 
@@ -778,57 +684,54 @@
               <div class="lore-section">
                 <h2 class="lore-title">Lore</h2>
                 <p class="lore-text">
-                  Darlyne Nightbloom adalah seorang putri di sebuah kerajaan bernama
+                  Darlyne Nightbloom adalah seorang putri di sebuah kerajaan
+                  bernama
                   <span class="highlight">"Nocturnia"</span> yang memiliki
-                  <span class="highlight">kekuatan magis untuk menyatukan cinta</span>, 
-                  orang-orang menyebutnya <span class="highlight">"Dokter Cinta"</span>! 
-                  Banyak pasien yang berkunjung dari luar maupun dari dalam kerajaan untuk 
-                  <span class="highlight">meminta bantuan Darlyne agar dipertemukan dengan cintanya</span>.
+                  <span class="highlight"
+                    >kekuatan magis untuk menyatukan cinta</span
+                  >, orang-orang menyebutnya
+                  <span class="highlight">"Dokter Cinta"</span>! Banyak pasien
+                  yang berkunjung dari luar maupun dari dalam kerajaan untuk
+                  <span class="highlight"
+                    >meminta bantuan Darlyne agar dipertemukan dengan
+                    cintanya</span
+                  >.
                 </p>
                 <p class="lore-text">
                   Namun kekuatan Darlyne sering disalahgunakan untuk
-                  <span class="highlight">merebut suami/istri orang</span> bahkan
-                  <span class="highlight">membunuhnya menggunakan panah</span> 
+                  <span class="highlight">merebut suami/istri orang</span>
+                  bahkan
+                  <span class="highlight">membunuhnya menggunakan panah</span>
                   yang ia baluri dengan ramuan mantra buatannya. Karena ulahnya,
-                  <span class="highlight">Nocturnia menjadi kacau dan banyak peperangan</span>.
-                  <span class="highlight">Raja dan Ratu mengusir Darlyne dari kerajaan</span> 
-                  untuk menebus dosa-dosa yang telah ia perbuat. Darlyne merantau pergi jauh untuk 
+                  <span class="highlight"
+                    >Nocturnia menjadi kacau dan banyak peperangan</span
+                  >.
+                  <span class="highlight"
+                    >Raja dan Ratu mengusir Darlyne dari kerajaan</span
+                  >
+                  untuk menebus dosa-dosa yang telah ia perbuat. Darlyne
+                  merantau pergi jauh untuk
                   <span class="highlight">mencari pekerjaan baru</span>.
                 </p>
                 <p class="lore-text">
-                  Di saat Darlyne kehilangan arah dan tujuan, 
-                  <span class="highlight">Darlyne dihampiri seorang sales berjas rapi</span> 
-                  menawarinya untuk menjadi <span class="highlight">seorang pelayan di sebuah tempat misterius</span>. 
-                  Karena sudah tidak ada tujuan lagi untuk pergi, akhirnya 
+                  Di saat Darlyne kehilangan arah dan tujuan,
+                  <span class="highlight"
+                    >Darlyne dihampiri seorang sales berjas rapi</span
+                  >
+                  menawarinya untuk menjadi
+                  <span class="highlight"
+                    >seorang pelayan di sebuah tempat misterius</span
+                  >. Karena sudah tidak ada tujuan lagi untuk pergi, akhirnya
                   <span class="highlight">Darlyne menerima pekerjaan itu</span>.
                 </p>
-                
-
-                <!-- <div class="lore-image-slider" data-char="darlyne">
-                  <div class="slider-container">
-                    <img
-                      src="darlyneimg/lore1.jpg"
-                      class="slider-image"
-                      alt="Darlyne Lore 1"
-                    />
-                    <img
-                      src="darlyneimg/lore2.jpg"
-                      class="slider-image"
-                      alt="Darlyne Lore 2"
-                    />
-                    <img
-                      src="darlyneimg/lore3.jpg"
-                      class="slider-image"
-                      alt="Darlyne Lore 3"
-                    />
-                  </div>
-                  <div class="slider-nav"></div>
-                  <button class="slider-btn prev">❮</button>
-                  <button class="slider-btn next">❯</button>
-                </div> -->
               </div>
               <div class="lore-section mt-3 items-center flex justify-center">
-                <img class="w-[100%] max-w-[400px]" src="darlyneimg/20250807_095847.jpg" alt="">
+                <img
+                  class="w-[100%] max-w-[400px]"
+                  src="darlyneimg/darylnevector.webp"
+                  alt=""
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
@@ -890,114 +793,13 @@
 
         <div class="container">
           <div class="header">
-            <h1
-              class="character-name"
-
-            >
-              Thalita Sylvaine
-            </h1>
+            <h1 class="character-name">Thalita Sylvaine</h1>
             <p class="subtitle">✨ Character Profile ✨</p>
           </div>
 
           <div class="main-content">
             <div class="profile-card slide-from-left">
               <div class="character-image" onclick="changeImage()"></div>
-
-              <!-- <div
-                style="
-                  display: flex;
-                  flex-wrap: wrap;
-                  gap: 5px;
-                  margin-bottom: 15px;
-                  justify-content: center;
-                "
-              >
-                <button
-                  onclick="changeImageSize('contain')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #56fa15;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Fit
-                </button>
-                <button
-                  onclick="changeImageSize('cover')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #56fa15;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Fill
-                </button>
-                <button
-                  onclick="changeImageSize('auto')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #a8e063;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Auto
-                </button>
-                <button
-                  onclick="setImagePreset('character')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #4caf50;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Character
-                </button>
-                <button
-                  onclick="setImagePreset('portrait')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #4caf50;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Portrait
-                </button>
-                <button
-                  onclick="changeImagePosition('center top')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #388e3c;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Focus Head
-                </button>
-              </div> -->
-
               <div class="mt-4 info-section">
                 <div class="info-title">Nickname</div>
                 <div class="info-content">Thalita</div>
@@ -1027,7 +829,9 @@
 
               <div class="info-section">
                 <div class="info-title">Languages</div>
-                <div class="info-content">INDONESIA,ENGLISH (BROKEN),JAPAN (BROKEN)</div>
+                <div class="info-content">
+                  INDONESIA,ENGLISH (BROKEN),JAPAN (BROKEN)
+                </div>
               </div>
             </div>
 
@@ -1035,39 +839,22 @@
               <div class="lore-section">
                 <h2 class="lore-title">Lore</h2>
                 <p class="lore-text">
-                  Seorang anak yang <span class="highlight">dikaruniai kekuatan angin</span>.
-                  Melalui <span class="highlight">tragedi berat</span> yang harus ia selalu sembunyikan.
-                  Hingga akhirnya pertemuan dengan <span class="highlight">Whicker Butler</span>,
-                  memberikan <span class="highlight">Thalita Sylvaine sebuah harapan</span> 
+                  Seorang anak yang
+                  <span class="highlight">dikaruniai kekuatan angin</span>.
+                  Melalui <span class="highlight">tragedi berat</span> yang
+                  harus ia selalu sembunyikan. Hingga akhirnya pertemuan dengan
+                  <span class="highlight">Whicker Butler</span>, memberikan
+                  <span class="highlight">Thalita Sylvaine sebuah harapan</span>
                   untuk hari-hari yang lebih baik.
                 </p>
-                
-
-                <!-- <div class="lore-image-slider" data-char="thalita">
-                  <div class="slider-container">
-                    <img
-                      src="thalitaimg/lore1.jpg"
-                      class="slider-image"
-                      alt="Thalita Lore 1"
-                    />
-                    <img
-                      src="thalitaimg/lore2.jpg"
-                      class="slider-image"
-                      alt="Thalita Lore 2"
-                    />
-                    <img
-                      src="thalitaimg/lore3.jpg"
-                      class="slider-image"
-                      alt="Thalita Lore 3"
-                    />
-                  </div>
-                  <div class="slider-nav"></div>
-                  <button class="slider-btn prev">❮</button>
-                  <button class="slider-btn next">❯</button>
-                </div> -->
               </div>
               <div class="lore-section mt-3 items-center flex justify-center">
-                <img class="w-[100%] max-w-[500px]" src="thalitaimg/20250807_095948.jpg" alt="">
+                <img
+                  class="w-[100%] max-w-[500px]"
+                  src="thalitaimg/tatavector.webp"
+                  alt=""
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
@@ -1076,13 +863,13 @@
             <div class="likes">
               <h3 class="section-title">❤️ Likes</h3>
               <div class="preference-item">
-                <strong class="text-amber-900">Happy</strong> 
+                <strong class="text-amber-900">Happy</strong>
               </div>
               <div class="preference-item">
                 <strong class="text-amber-900">Reog</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Love</strong> 
+                <strong class="text-amber-900">Love</strong>
               </div>
               <div class="preference-item">
                 <strong class="text-amber-900">Creations</strong>
@@ -1094,18 +881,20 @@
                 <strong class="text-amber-900">Bersantai</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Dance</strong> 
+                <strong class="text-amber-900">Dance</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Pizza</strong> 
+                <strong class="text-amber-900">Pizza</strong>
               </div>
             </div>
 
             <div class="dislikes">
               <h3 class="section-title">💔 Dislikes</h3>
               <div class="preference-item">
-                <strong class="text-amber-900">Hewan Yang Tak Terlihat Indah</strong> -
-                Karna Takut 
+                <strong class="text-amber-900"
+                  >Hewan Yang Tak Terlihat Indah</strong
+                >
+                - Karna Takut
               </div>
               <div class="preference-item">
                 <strong class="text-amber-900">Wastingfood</strong>
@@ -1133,113 +922,13 @@
 
         <div class="container">
           <div class="header">
-            <h1
-              class="character-name"
-            >
-              Ignis Grimoire
-            </h1>
+            <h1 class="character-name">Ignis Grimoire</h1>
             <p class="subtitle">✨ Character Profile ✨</p>
           </div>
 
           <div class="main-content">
             <div class="profile-card slide-from-left">
               <div class="character-image" onclick="changeImage()"></div>
-
-              <!-- <div
-                style="
-                  display: flex;
-                  flex-wrap: wrap;
-                  gap: 5px;
-                  margin-bottom: 15px;
-                  justify-content: center;
-                "
-              >
-                <button
-                  onclick="changeImageSize('contain')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #f33412;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Fit
-                </button>
-                <button
-                  onclick="changeImageSize('cover')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #f33412;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Fill
-                </button>
-                <button
-                  onclick="changeImageSize('auto')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #ff7f50;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Auto
-                </button>
-                <button
-                  onclick="setImagePreset('character')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #c0392b;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Character
-                </button>
-                <button
-                  onclick="setImagePreset('portrait')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #c0392b;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Portrait
-                </button>
-                <button
-                  onclick="changeImagePosition('center top')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #e74c3c;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Focus Head
-                </button>
-              </div> -->
-
               <div class="mt-4 info-section">
                 <div class="info-title">Nickname</div>
                 <div class="info-content">Iggy</div>
@@ -1270,7 +959,9 @@
 
               <div class="info-section">
                 <div class="info-title">Hobby</div>
-                <div class="info-content">NONTON ANIKE,BACA MANGA,MASAK,TIDUR</div>
+                <div class="info-content">
+                  NONTON ANIKE,BACA MANGA,MASAK,TIDUR
+                </div>
               </div>
             </div>
 
@@ -1278,43 +969,37 @@
               <div class="lore-section">
                 <h2 class="lore-title">Lore</h2>
                 <p class="lore-text">
-                  Anak SMA Kebon Jeruk yang <span class="highlight">nggak sengaja ketemu buku misterius</span>.
-                  Setelah dia baca buku itu, <span class="highlight">dia terkena petir dan bereinkarnasi ke isekai</span>.
+                  Anak SMA Kebon Jeruk yang
+                  <span class="highlight"
+                    >nggak sengaja ketemu buku misterius</span
+                  >. Setelah dia baca buku itu,
+                  <span class="highlight"
+                    >dia terkena petir dan bereinkarnasi ke isekai</span
+                  >.
                 </p>
                 <p class="lore-text">
-                  Di isekai, dia <span class="highlight">menjadi sebuah buku grimoire</span> dan harus 
-                  <span class="highlight">menemukan kontraktor untuk mengembalikan tubuh manusianya</span>. 
-                  Akhirnya dia menemukan <span class="highlight">seorang kontraktor misterius</span> dan 
-                  <span class="highlight">orang itu merekrut Iggy untuk menjadi butler</span> 
+                  Di isekai, dia
+                  <span class="highlight">menjadi sebuah buku grimoire</span>
+                  dan harus
+                  <span class="highlight"
+                    >menemukan kontraktor untuk mengembalikan tubuh
+                    manusianya</span
+                  >. Akhirnya dia menemukan
+                  <span class="highlight">seorang kontraktor misterius</span>
+                  dan
+                  <span class="highlight"
+                    >orang itu merekrut Iggy untuk menjadi butler</span
+                  >
                   di organisasi <span class="highlight">Whicker Butler</span>.
                 </p>
-                
-
-                <!-- <div class="lore-image-slider" data-char="ignis">
-                  <div class="slider-container">
-                    <img
-                      src="ignisimg/lore1.jpg"
-                      class="slider-image"
-                      alt="Ignis Lore 1"
-                    />
-                    <img
-                      src="ignisimg/lore2.jpg"
-                      class="slider-image"
-                      alt="Ignis Lore 2"
-                    />
-                    <img
-                      src="ignisimg/lore3.jpg"
-                      class="slider-image"
-                      alt="Ignis Lore 3"
-                    />
-                  </div>
-                  <div class="slider-nav"></div>
-                  <button class="slider-btn prev">❮</button>
-                  <button class="slider-btn next">❯</button>
-                </div> -->
               </div>
               <div class="lore-section mt-3 items-center flex justify-center">
-                <img class="w-[100%] max-w-[500px]" src="ignisimg/20250807_095921.jpg" alt="">
+                <img
+                  class="w-[100%] max-w-[500px]"
+                  src="ignisimg/ignisvector.webp"
+                  alt=""
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
@@ -1323,26 +1008,26 @@
             <div class="likes">
               <h3 class="section-title">❤️ Likes</h3>
               <div class="preference-item">
-                <strong class="text-amber-900">Anime</strong> 
+                <strong class="text-amber-900">Anime</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Manga</strong> 
+                <strong class="text-amber-900">Manga</strong>
               </div>
               <div class="preference-item">
                 <strong class="text-amber-900">Makan</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Masak</strong> 
+                <strong class="text-amber-900">Masak</strong>
               </div>
               <div class="preference-item">
-                <strong class="text-amber-900">Main Game</strong> 
+                <strong class="text-amber-900">Main Game</strong>
               </div>
             </div>
 
             <div class="dislikes">
               <h3 class="section-title">💔 Dislikes</h3>
               <div class="preference-item">
-                <strong class="text-amber-900">Hantu</strong> 
+                <strong class="text-amber-900">Hantu</strong>
               </div>
             </div>
           </div>
@@ -1361,113 +1046,13 @@
 
         <div class="container">
           <div class="header">
-            <h1
-              class="character-name"
-            >
-              Valthea Nakila
-            </h1>
+            <h1 class="character-name">Valthea Nakila</h1>
             <p class="subtitle">✨ Character Profile ✨</p>
           </div>
 
           <div class="main-content">
             <div class="profile-card slide-from-left">
               <div class="character-image" onclick="changeImage()"></div>
-
-              <!-- <div
-                style="
-                  display: flex;
-                  flex-wrap: wrap;
-                  gap: 5px;
-                  margin-bottom: 15px;
-                  justify-content: center;
-                "
-              >
-                <button
-                  onclick="changeImageSize('contain')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #1133f3;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Fit
-                </button>
-                <button
-                  onclick="changeImageSize('cover')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #1133f3;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Fill
-                </button>
-                <button
-                  onclick="changeImageSize('auto')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #5f9ea0;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Auto
-                </button>
-                <button
-                  onclick="setImagePreset('character')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #0e4c92;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Character
-                </button>
-                <button
-                  onclick="setImagePreset('portrait')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #0e4c92;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Portrait
-                </button>
-                <button
-                  onclick="changeImagePosition('center top')"
-                  style="
-                    padding: 5px 10px;
-                    border: none;
-                    border-radius: 5px;
-                    background: #1572b6;
-                    color: white;
-                    cursor: pointer;
-                    font-size: 10px;
-                  "
-                >
-                  Focus Head
-                </button>
-              </div> -->
-
               <div class="my-4 info-section">
                 <div class="info-title">Nickname</div>
                 <div class="info-content">Val, Thea, Valthea, Sayang</div>
@@ -1497,7 +1082,9 @@
 
               <div class="info-section">
                 <div class="info-title">Languages</div>
-                <div class="info-content">INDONESIA, ENG BROKEN, BAHASA INSTING</div>
+                <div class="info-content">
+                  INDONESIA, ENG BROKEN, BAHASA INSTING
+                </div>
               </div>
             </div>
 
@@ -1505,50 +1092,40 @@
               <div class="lore-section">
                 <h2 class="lore-title">Lore</h2>
                 <p class="lore-text">
-                  <span class="highlight">Valthea Nankila</span> adalah seorang 
-                  <span class="highlight">penyebar informasi misterius</span> 
-                  yang dikenal sebagai <span class="highlight">broker rahasia</span>. 
-                  Ia bisa mendapatkan segala jenis informasi dan bahkan 
-                  <span class="highlight">memanipulasi rumor sesuai permintaan kliennya</span>. 
-                  Identitasnya sangat tersembunyi, <em>hanya sedikit yang tahu siapa dia sebenarnya</em>.
+                  <span class="highlight">Valthea Nankila</span> adalah seorang
+                  <span class="highlight">penyebar informasi misterius</span>
+                  yang dikenal sebagai
+                  <span class="highlight">broker rahasia</span>. Ia bisa
+                  mendapatkan segala jenis informasi dan bahkan
+                  <span class="highlight"
+                    >memanipulasi rumor sesuai permintaan kliennya</span
+                  >. Identitasnya sangat tersembunyi,
+                  <em>hanya sedikit yang tahu siapa dia sebenarnya</em>.
                 </p>
                 <p class="lore-text">
-                  Namun, di balik sosoknya yang penuh teka-teki, Valthea juga seorang 
-                  <span class="highlight">penampil berbakat</span>. Ia dikenal sebagai 
-                  <span class="highlight">penyanyi, aktris, dan penari</span> dalam dunia opera dan teater. 
-                  Setelah bertahun-tahun dalam <span class="highlight">dunia perdagangan informasi</span>, 
-                  ia penasaran dengan <span class="highlight">Whicker Butler</span> dan 
-                  <span class="highlight">pemimpinnya yang selalu memberi kejutan</span>. 
-                  Demi rasa ingin tahu, ia akhirnya <span class="highlight">bergabung</span>, 
-                  meskipun tetap <span class="highlight">menjaga kewaspadaannya</span>.
+                  Namun, di balik sosoknya yang penuh teka-teki, Valthea juga
+                  seorang
+                  <span class="highlight">penampil berbakat</span>. Ia dikenal
+                  sebagai
+                  <span class="highlight">penyanyi, aktris, dan penari</span>
+                  dalam dunia opera dan teater. Setelah bertahun-tahun dalam
+                  <span class="highlight">dunia perdagangan informasi</span>, ia
+                  penasaran dengan
+                  <span class="highlight">Whicker Butler</span> dan
+                  <span class="highlight"
+                    >pemimpinnya yang selalu memberi kejutan</span
+                  >. Demi rasa ingin tahu, ia akhirnya
+                  <span class="highlight">bergabung</span>, meskipun tetap
+                  <span class="highlight">menjaga kewaspadaannya</span>.
                 </p>
-                
-
-                <!-- <div class="lore-image-slider" data-char="valthea">
-                  <div class="slider-container">
-                    <img
-                      src="valtheaimg/lore1.jpg"
-                      class="slider-image"
-                      alt="Valthea Lore 1"
-                    />
-                    <img
-                      src="valtheaimg/lore2.jpg"
-                      class="slider-image"
-                      alt="Valthea Lore 2"
-                    />
-                    <img
-                      src="valtheaimg/lore3.jpg"
-                      class="slider-image"
-                      alt="Valthea Lore 3"
-                    />
-                  </div>
-                  <div class="slider-nav"></div>
-                  <button class="slider-btn prev">❮</button>
-                  <button class="slider-btn next">❯</button>
-                </div> -->
               </div>
               <div class="lore-section mt-3 items-center flex justify-center">
-                <img class="w-[100%] max-w-[700px]" src="valtheaimg/20250807_095737.jpg" alt="">
+                <img
+                  class="w-[100%] max-w-[700px]"
+                  src="valtheaimg/theavector.webp"
+                  alt=""
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
@@ -1557,7 +1134,7 @@
             <div class="likes">
               <h3 class="section-title">❤️ Likes</h3>
               <div class="preference-item">
-                <strong class="text-amber-900">Uang</strong> 
+                <strong class="text-amber-900">Uang</strong>
               </div>
               <div class="preference-item">
                 <strong class="text-amber-900">Idol</strong>
@@ -1599,6 +1176,26 @@
       </div>
     </section>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      if ("IntersectionObserver" in window) {
+        let imageObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              let image = entry.target;
+              image.classList.remove("lazy");
+              imageObserver.unobserve(image);
+            }
+          });
+        });
+
+        images.forEach(function (img) {
+          imageObserver.observe(img);
+        });
+      }
+    });
+  </script>
   <script src="js/animasi.js"></script>
   <script src="js/character-animations.js"></script>
 </html>

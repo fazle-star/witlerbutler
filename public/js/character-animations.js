@@ -27,19 +27,19 @@ function initializeCharacterImages() {
         // Set the initial background image based on the character
         switch(char) {
             case 'risol':
-                img.style.backgroundImage = 'url("risolimg/risol.png")';
+                img.style.backgroundImage = 'url("risolimg/risolicon.webp")';
                 break;
             case 'darlyne':
-                img.style.backgroundImage = 'url("darlyneimg/ppdar.jpg")';
+                img.style.backgroundImage = 'url("darlyneimg/darylneicon.webp")';
                 break;
             case 'thalita':
-                img.style.backgroundImage = 'url("thalitaimg/pplita.jpg")';
+                img.style.backgroundImage = 'url("thalitaimg/tataicon.webp")';
                 break;
             case 'ignis':
-                img.style.backgroundImage = 'url("ignisimg/ppignis.jpg")';
+                img.style.backgroundImage = 'url("ignisimg/ignisicon.webp")';
                 break;
             case 'valthea':
-                img.style.backgroundImage = 'url("valtheaimg/ppthea.jpg")';
+                img.style.backgroundImage = 'url("valtheaimg/theaicon.webp")';
                 break;
         }
         
